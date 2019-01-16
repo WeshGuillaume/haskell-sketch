@@ -9,4 +9,4 @@ import Types.Page
 import Unzip
 
 main :: IO ()
-main = page 0 <$> readSketchFile "test.sketch" >>= (putStrLn . show)
+main = readSketchFile "test.sketch" >>= writeSketchFile "output.sketch"

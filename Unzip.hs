@@ -12,8 +12,8 @@ readSketchFile file = toArchive <$> BL.readFile file
 
 getEntries a = map fromEntry (zEntries a)
 
-writeSketchFile :: Archive -> BL.ByteString
-writeSketchFile = fromArchive
+writeSketchFile :: FilePath -> Archive -> IO ()
+writeSketchFile p = (BL.writeFile p . fromArchive)
 
 document :: [BL.ByteString] -> BL.ByteString
 document = (!!0)

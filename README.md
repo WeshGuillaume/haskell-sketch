@@ -1,14 +1,13 @@
 
-## Type Safe Sketch File Parser
+## Type Safe Sketch File Reader/Writer
 
 ### Usage
 
 ``` haskell
 
--- Get the first page of a sketch file
--- and print it to the console
+-- Read a sketch file and write a copy
 
 main :: IO ()
-main = page 0 <$> readSketchFile "test.sketch" >>= (putStrLn . show)
+main = readSketchFile "test.sketch" >>= writeSketchFile "output.sketch"
 
 ```
